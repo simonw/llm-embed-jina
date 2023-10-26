@@ -7,6 +7,12 @@
 
 Embedding models from Jina AI
 
+## Background
+
+[Jina AI Launches World's First Open-Source 8K Text Embedding, Rivaling OpenAI](https://jina.ai/news/jina-ai-launches-worlds-first-open-source-8k-text-embedding-rivaling-openai/) introduces these models.
+
+See also [Embeddings: What they are and why they matter](https://simonwillison.net/2023/Oct/23/embeddings/) for background on embeddings and an explanation of the LLM embeddings tool.
+
 ## Installation
 
 Install this plugin in the same environment as [LLM](https://llm.datasette.io/).
@@ -15,7 +21,22 @@ Install this plugin in the same environment as [LLM](https://llm.datasette.io/).
 
 ## Usage
 
-Usage instructions go here.
+This plugin adds support for three new embedding models:
+
+- [`jina-embeddings-v2-small-en`](https://huggingface.co/jinaai/jina-embeddings-v2-small-en): 33 million parameters.
+- [`jina-embeddings-v2-base-en`](https://huggingface.co/jinaai/jina-embeddings-v2-base-en): 137 million parameters.
+- [`jina-embeddings-v2-large-en`](https://huggingface.co/jinaai/jina-embeddings-v2-large-en): 435 million parameters - not yet released, but it will work once it has been released.
+
+The models will be downloaded the first time you try to use them.
+
+See [the LLM documentation](https://llm.datasette.io/en/stable/embeddings/index.html) for everything you can do.
+
+To get started embedding a single string, run the following:
+
+```bash
+llm embed -m jina-embeddings-v2-small-en -c 'Hello world'
+```
+This will output a JSON array of 512 floating point numbers to your terminal.
 
 ## Development
 
