@@ -22,5 +22,5 @@ class JinaEmbeddingModel(llm.EmbeddingModel):
             self._model = AutoModel.from_pretrained(
                 "jinaai/{}".format(self.model_id), trust_remote_code=True
             )
-        results = self._model.encode(texts)
+        results = self._model.encode(list(texts))
         return (list(map(float, result)) for result in results)
