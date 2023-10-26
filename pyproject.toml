@@ -1,0 +1,27 @@
+[project]
+name = "llm-embed-jina"
+version = "0.1"
+description = "Embedding models from Jina AI"
+readme = "README.md"
+authors = [{name = "Simon Willison"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "llm",
+    "transformers",
+    "torch",
+]
+
+[project.urls]
+Homepage = "https://github.com/simonw/llm-embed-jina"
+Changelog = "https://github.com/simonw/llm-embed-jina/releases"
+Issues = "https://github.com/simonw/llm-embed-jina/issues"
+CI = "https://github.com/simonw/llm-embed-jina/actions"
+
+[project.entry-points.llm]
+embed_jina = "llm_embed_jina"
+
+[project.optional-dependencies]
+test = ["pytest"]
