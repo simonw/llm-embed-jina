@@ -1,6 +1,8 @@
 import llm
 from transformers import AutoModel
 
+MAX_LENGTH = 8192
+
 
 @llm.hookimpl
 def register_embedding_models(register):
@@ -22,5 +24,5 @@ class JinaEmbeddingModel(llm.EmbeddingModel):
             self._model = AutoModel.from_pretrained(
                 "jinaai/{}".format(self.model_id), trust_remote_code=True
             )
-        results = self._model.encode(list(texts))
+        results = self._model.encode([text[:MAX_LENGTH] for text in texts])
         return (list(map(float, result)) for result in results)
