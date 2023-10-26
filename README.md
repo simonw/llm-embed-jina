@@ -13,6 +13,8 @@ Embedding models from Jina AI
 
 See also [Embeddings: What they are and why they matter](https://simonwillison.net/2023/Oct/23/embeddings/) for background on embeddings and an explanation of the LLM embeddings tool.
 
+Here's [my blog post about how I built this plugin](https://simonwillison.net/2023/Oct/26/llm-embed-jina/).
+
 ## Installation
 
 Install this plugin in the same environment as [LLM](https://llm.datasette.io/).
