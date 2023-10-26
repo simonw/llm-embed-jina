@@ -38,6 +38,19 @@ llm embed -m jina-embeddings-v2-small-en -c 'Hello world'
 ```
 This will output a JSON array of 512 floating point numbers to your terminal.
 
+To calculate and store embeddings for every README in the current directory (try this somewhere with a `node_modules` directory to get lots of READMEs) run this:
+
+```bash
+llm embed-multi jina-readmes \
+    -m jina-embeddings-v2-small-en \
+    --files . '**/README.md' --store
+```
+Then you can run searches against them like this:
+```bash
+llm similar jina-readmes -c 'utility functions'
+```
+Add `| jq` to pipe it through [jq](https://jqlang.github.io/jq/) for pretty-printed output, or ` | jq .id` to just see the matching filenames.
+
 ## Development
 
 To set up this plugin locally, first checkout the code. Then create a new virtual environment:
