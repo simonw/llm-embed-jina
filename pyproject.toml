@@ -1,6 +1,6 @@
 [project]
 name = "llm-embed-jina"
-version = "0.1.1"
+version = "0.1.2"
 description = "Embedding models from Jina AI"
 readme = "README.md"
 authors = [{name = "Simon Willison"}]
