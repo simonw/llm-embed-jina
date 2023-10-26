@@ -22,7 +22,7 @@ jobs:
     - name: Cache models
       uses: actions/cache@v3
       with:
-        path: ~/.cache/torch
+        path: ~/.cache
         key: ${{ runner.os }}-torch-
     - name: Install dependencies
       run: |
